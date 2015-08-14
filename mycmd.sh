@@ -19,8 +19,8 @@ usage(){
         echo
 }
 cd `dirname $0`
-[ ! -f "./cmd.list" ] && echo "cmd.list 文件不存在,请先在同级目录下创建cmd.list文件" && exit 1
-CMD_LIST=`cat ./cmd.list`
+[ ! -f "./.cmd.list" ] && echo "./cmd.list 文件不存在,请先在同级目录下创建cmd.list文件" && exit 1
+CMD_LIST=`cat ./.cmd.list`
 echo "${CMD_LIST}" | awk  'BEGIN{print "编号\t命令"}{print NR"\t"$0}END{}'
 echo
 echo "输入你要进入的命令编号:"
